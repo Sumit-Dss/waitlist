@@ -41,10 +41,13 @@ body {
 }
 
 .ransom-headline img {
-  max-width: 750px; /* ← change this to resize the ransom note */
   width: 100%;
   display: block;
 }
+
+.img-coinspiracy { max-width: 900px; } /* ← coinspiracy size */
+.img-join        { max-width: 300px; } /* ← join size */
+.img-waitlist    { max-width: 750px; } /* ← waitlist size */
 
 .waitlist-form {
   display: flex;

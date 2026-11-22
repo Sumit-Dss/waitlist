@@ -54,9 +54,9 @@ export default function App() {
         <p className="eyebrow">Something big is coming</p>
 
         <div className="ransom-headline">
-          <img src={coinspiracyImg} alt="coinspiracy" />
-          <img src={joinImg} alt="join" />
-          <img src={waitlistImg} alt="waitlist" />
+          <img src={coinspiracyImg} alt="coinspiracy" className="img-coinspiracy" />
+          <img src={joinImg} alt="join" className="img-join" />
+          <img src={waitlistImg} alt="waitlist" className="img-waitlist" />
         </div>
 
         {submitted ? (
