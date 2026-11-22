@@ -42,13 +42,12 @@ body {
 }
 
 .ransom-headline img {
-  width: 100%;
   display: block;
 }
 
-.img-coinspiracy { max-width: 900px; } /* ← coinspiracy size */
-.img-join        { max-width: 300px; } /* ← join size */
-.img-waitlist    { max-width: 750px; } /* ← waitlist size */
+.img-coinspiracy { max-width: 900px; width: 95%; }  /* ← coinspiracy size */
+.img-join        { max-width: 300px; width: 40%; }  /* ← join size */
+.img-waitlist    { max-width: 750px; width: 80%; }  /* ← waitlist size */
 
 .waitlist-form {
   display: flex;
