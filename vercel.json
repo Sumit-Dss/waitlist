@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd ransom-waitlist/client && npm install && npm run build",
+  "outputDirectory": "ransom-waitlist/client/dist",
+  "installCommand": "echo skip"
+}
