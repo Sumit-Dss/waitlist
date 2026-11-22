@@ -11,8 +11,8 @@ export default function App() {
   const [nameError, setNameError] = useState("");
   const [phoneError, setPhoneError] = useState("");
 
-  // Indian mobile: optional +91/0 prefix, then 10 digits starting with 6-9
-  const phoneRegex = /^(?:\+91|0)?[6-9]\d{9}$/;
+  // Indian mobile: exactly 10 digits starting with 6-9
+  const phoneRegex = /^[6-9]\d{9}$/;
 
   async function handleJoin(e) {
     e.preventDefault();
@@ -70,7 +70,8 @@ export default function App() {
             {nameError && <p className="field-error">{nameError}</p>}
             <input
               type="tel"
-              placeholder="+91 98765 43210"
+              placeholder="98765 43210"
+              maxLength={10}
               value={phone}
               onChange={(e) => { setPhone(e.target.value); setPhoneError(""); }}
             />
