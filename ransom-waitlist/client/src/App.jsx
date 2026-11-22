@@ -58,7 +58,23 @@ export default function App() {
           <img src={joinImg} alt="join" className="img-join" />
           <img src={waitlistImg} alt="waitlist" className="img-waitlist" />
         </div>
+      </header>
 
+      <section className="description">
+        <p>Imagine walking into a game where your decisions can make you rich, one wrong move can cost you everything, and trust isn't always what it seems. 👀</p>
+        <ul>
+          <li>🪙 Build your fortune, one decision at a time.</li>
+          <li>🤝 Make alliances, but choose your moves carefully.</li>
+          <li>🎭 Take risks, read the room, and know when to play your cards.</li>
+          <li>🔥 Expect unexpected twists that can change the game in seconds.</li>
+        </ul>
+        <p>No boring rounds. No predictable outcomes. Just strategy, competition, and a whole lot of suspense.</p>
+        <p className="tagline">One game. Multiple twists. Countless ways to win.</p>
+        <p className="introducing">Introducing <strong>COINSPIRACY</strong>.</p>
+        <p className="cta-text">Think you can play the game? 😈</p>
+      </section>
+
+      <div className="form-section">
         {submitted ? (
           <div className="success-box">🎉 You&apos;re on the list! We&apos;ll be in touch.</div>
         ) : (
@@ -81,21 +97,7 @@ export default function App() {
             <button type="submit">Join now</button>
           </form>
         )}
-      </header>
-
-      <section className="description">
-        <p>Imagine walking into a game where your decisions can make you rich, one wrong move can cost you everything, and trust isn't always what it seems. 👀</p>
-        <ul>
-          <li>🪙 Build your fortune, one decision at a time.</li>
-          <li>🤝 Make alliances, but choose your moves carefully.</li>
-          <li>🎭 Take risks, read the room, and know when to play your cards.</li>
-          <li>🔥 Expect unexpected twists that can change the game in seconds.</li>
-        </ul>
-        <p>No boring rounds. No predictable outcomes. Just strategy, competition, and a whole lot of suspense.</p>
-        <p className="tagline">One game. Multiple twists. Countless ways to win.</p>
-        <p className="introducing">Introducing <strong>COINSPIRACY</strong>.</p>
-        <p className="cta-text">Think you can play the game? 😈</p>
-      </section>
+      </div>
 
       <footer>
         <p>© 2026 · No spam, ever.</p>
