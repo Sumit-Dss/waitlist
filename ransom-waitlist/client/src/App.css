@@ -102,46 +102,29 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2.5rem 1rem 1rem;
+  padding: 2rem 1rem;
   width: 100%;
 }
 
-/* ── Description ── */
-.description {
+/* ── Tagline block ── */
+.tagline-section {
   max-width: 620px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  padding: 3rem 1rem;
-  text-align: center;
-  color: #ccc;
-  font-size: clamp(0.9rem, 2.5vw, 1.05rem);
-  line-height: 1.8;
-  border-top: 1px solid #222;
-}
-
-.description ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
   gap: 0.6rem;
-  padding: 0;
-  text-align: left;
-}
-
-.description li {
-  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  padding: 2rem 1rem 0;
+  text-align: center;
 }
 
 .tagline {
   font-weight: 600;
   color: #f0f0f0;
-  font-size: clamp(0.95rem, 2.5vw, 1.1rem) !important;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
 }
 
 .introducing {
-  font-size: clamp(1rem, 3vw, 1.3rem) !important;
+  font-size: clamp(1rem, 3vw, 1.3rem);
   color: #f0f0f0;
 }
 
@@ -151,13 +134,43 @@ body {
 }
 
 .cta-text {
-  font-size: clamp(0.95rem, 2.5vw, 1.1rem) !important;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
   color: #f0f0f0;
   font-weight: 600;
 }
 
-footer {
-  margin-top: 4rem;
-  color: #444;
-  font-size: 0.85rem;
+/* ── Description footer ── */
+.description {
+  max-width: 620px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 3rem 1rem 2rem;
+  text-align: center;
+  color: #666;
+  font-size: clamp(0.85rem, 2.2vw, 0.95rem);
+  line-height: 1.8;
+  border-top: 1px solid #1a1a1a;
+  margin-top: 3rem;
+}
+
+.description ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0;
+  text-align: left;
+  color: #555;
+}
+
+.description li {
+  font-size: clamp(0.85rem, 2.2vw, 0.95rem);
+}
+
+.footer-copy {
+  color: #333;
+  font-size: 0.8rem;
+  margin-top: 1rem;
 }
