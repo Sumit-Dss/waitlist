@@ -37,7 +37,7 @@ export default function App() {
 
     if (!valid) return;
     try {
-      await fetch("https://script.google.com/macros/s/AKfycbz3v4fs-5kzRXSHu2HGrMWbMXaoA_5Qzs5Wtn0xenDmUeTEHkPFHBmzXZ1G2dcDAjJs/exec", {
+      await fetch("https://script.google.com/macros/s/AKfycbxxWaCah5mx6y_-kNomU-sB3Qg97W9F5K_l42sbaOIMvglE2ohq7umeJXnvEi0nYMw/exec", {
         method: "POST",
         mode: "no-cors", // Apps Script doesn't send CORS headers; write still goes through
         headers: { "Content-Type": "application/json" },
