@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import joinImg from "./assets/join.png";
 import waitlistImg from "./assets/waitlist.png";
+import coinspiracyImg from "./assets/coinspiracy.png";
 
 export default function App() {
   const [name, setName] = useState("");
@@ -53,6 +54,7 @@ export default function App() {
         <p className="eyebrow">Something big is coming</p>
 
         <div className="ransom-headline">
+          <img src={coinspiracyImg} alt="coinspiracy" />
           <img src={joinImg} alt="join" />
           <img src={waitlistImg} alt="waitlist" />
         </div>
@@ -80,6 +82,20 @@ export default function App() {
           </form>
         )}
       </header>
+
+      <section className="description">
+        <p>Imagine walking into a game where your decisions can make you rich, one wrong move can cost you everything, and trust isn't always what it seems. 👀</p>
+        <ul>
+          <li>🪙 Build your fortune, one decision at a time.</li>
+          <li>🤝 Make alliances, but choose your moves carefully.</li>
+          <li>🎭 Take risks, read the room, and know when to play your cards.</li>
+          <li>🔥 Expect unexpected twists that can change the game in seconds.</li>
+        </ul>
+        <p>No boring rounds. No predictable outcomes. Just strategy, competition, and a whole lot of suspense.</p>
+        <p className="tagline">One game. Multiple twists. Countless ways to win.</p>
+        <p className="introducing">Introducing <strong>COINSPIRACY</strong>.</p>
+        <p className="cta-text">Think you can play the game? 😈</p>
+      </section>
 
       <footer>
         <p>© 2026 · No spam, ever.</p>
