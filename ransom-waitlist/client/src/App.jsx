@@ -4,14 +4,16 @@ import joinImg from "./assets/join.png";
 import waitlistImg from "./assets/waitlist.png";
 import coinspiracyImg from "./assets/coinspiracy.png";
 
+// outside component — not recreated on every render
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxxWaCah5mx6y_-kNomU-sB3Qg97W9F5K_l42sbaOIMvglE2ohq7umeJXnvEi0nYMw/exec";
+const phoneRegex = /^[6-9]\d{9}$/;
+
 export default function App() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [nameError, setNameError] = useState("");
   const [phoneError, setPhoneError] = useState("");
-
-  const phoneRegex = /^[6-9]\d{9}$/;
 
   async function handleJoin(e) {
     e.preventDefault();
@@ -27,8 +29,8 @@ export default function App() {
     if (!phone.trim()) {
       setPhoneError("Phone number is required");
       valid = false;
-    } else if (!phoneRegex.test(phone.replace(/\s+/g, ""))) {
-      setPhoneError("Enter a valid Indian mobile number");
+    } else if (!phoneRegex.test(phone)) {
+      setPhoneError("Enter a valid 10-digit Indian mobile number");
       valid = false;
     } else {
       setPhoneError("");
@@ -36,11 +38,11 @@ export default function App() {
 
     if (!valid) return;
     try {
-      await fetch("https://script.google.com/macros/s/AKfycbxxWaCah5mx6y_-kNomU-sB3Qg97W9F5K_l42sbaOIMvglE2ohq7umeJXnvEi0nYMw/exec", {
+      await fetch(SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: name.trim(), phone: phone.trim() }),
+        body: JSON.stringify({ name: name.trim(), phone }),
       });
     } catch (_) {}
     setSubmitted(true);
@@ -60,37 +62,31 @@ export default function App() {
       <section className="tagline-section">
         <p className="tagline">One game. Multiple twists. Countless ways to win.</p>
         <p className="introducing">Introducing <strong>COINSPIRACY</strong>.</p>
-        <p className="cta-text">Think you can play the game? 😈</p>
+        <p className="tagline">Think you can play the game? 😈</p>
       </section>
 
-      <div className="form-section">
-        {submitted ? (
-          <div className="success-box">🎉 You&apos;re on the list! We&apos;ll be in touch.</div>
-        ) : (
-          <form className="waitlist-form" onSubmit={handleJoin}>
-            <input
-              type="text"
-              placeholder="Your name"
-              value={name}
-              onChange={(e) => { setName(e.target.value); setNameError(""); }}
-            />
-            {nameError && <p className="field-error">{nameError}</p>}
-            <input
-              type="tel"
-              placeholder="98765 43210"
-              maxLength={10}
-              value={phone}
-              onChange={(e) => { setPhone(e.target.value.replace(/\s+/g, "")); setPhoneError(""); }}
-              onBlur={() => {
-                if (phone && !phoneRegex.test(phone.replace(/\s+/g, "")))
-                  setPhoneError("Enter a valid Indian mobile number");
-              }}
-            />
-            {phoneError && <p className="field-error">{phoneError}</p>}
-            <button type="submit">Join now</button>
-          </form>
-        )}
-      </div>
+      {submitted ? (
+        <div className="success-box">🎉 You&apos;re on the list! We&apos;ll be in touch.</div>
+      ) : (
+        <form className="waitlist-form" onSubmit={handleJoin}>
+          <input
+            type="text"
+            placeholder="Your name"
+            value={name}
+            onChange={(e) => { setName(e.target.value); setNameError(""); }}
+          />
+          {nameError && <p className="field-error">{nameError}</p>}
+          <input
+            type="tel"
+              placeholder="9xxxxxxxx"
+            maxLength={10}
+            value={phone}
+            onChange={(e) => { setPhone(e.target.value.replace(/\D/g, "")); setPhoneError(""); }}
+          />
+          {phoneError && <p className="field-error">{phoneError}</p>}
+          <button type="submit">Join now</button>
+        </form>
+      )}
 
       <footer className="description">
         <p>Imagine walking into a game where your decisions can make you rich, one wrong move can cost you everything, and trust isn't always what it seems. 👀</p>
